@@ -1,171 +1,58 @@
-/* Recipe Page Specific Styles */
-.recipe-page {
-    padding-top: 100px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 100px 20px 50px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Recipes - Gluten Free & Dairy Free</title>
+    <link rel="stylesheet" href="browseallrecipes.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Inter:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header id="header">
+    <div class="container">
+        <a href="starting.html">
+            <img src="images/Logo.png" alt="Flourish & Free Logo" class="logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browseallrecipes.html" class="active">Recipes</a></li>
+                <li><a href="Hacks.html">Tips/Hacks</a></li>
+                <li><a href="#">Gallery</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
-.recipe-hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    margin-bottom: 50px;
-    align-items: center;
-}
+<main>
+    <section class="hero">
+        <h1>BROWSE ALL RECIPES</h1>
+        <p>Not sure what to make? Discover a variety of delicious gluten-free and dairy-free recipes for every craving.</p>
+    </section>
 
-.recipe-image-container {
-    position: relative;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-}
+    <section class="recipe-grid">
+        <!-- Recipe Cards -->
+        <div class="recipe-card">
+            <img src="images/joyful-G4zLsxLIpAA-unsplash.jpg" alt="Coconut Oil Chocolate Cookies">
+            <h3>Coconut Oil Chocolate Cookies</h3>
+            <p>One bowl simple chocolate chip cookie recipe made from standard ingredients we all usually have in our pantries.</p>
+            <a href="chocolatechipcookies.html" class="button">View Recipe</a>
+        </div>
+        <div class="recipe-card">
+            <img src="images/priscilla-du-preez-8vKxl0uxyYc-unsplash (1).jpg" alt="Peanut Butter Bread">
+            <h3>Peanut Butter Bread</h3>
+            <p>Deliciously moist peanut butter banana bread made with gluten-free and dairy-free ingredients, perfect for a wholesome treat.</p>
+            <a href="recipe-peanut-bread.html" class="button">View Recipe</a>
+        </div>
+        <div class="recipe-card">
+            <img src="images/alina-karpenko-d8GDJalt_BE-unsplash (1).jpg" alt="Bakery Style Muffins">
+            <h3>Bakery Style Muffins</h3>
+            <p>Fluffy bakery-style muffins created from some basic ingredients, ideal for a delightful morning snack.</p>
+            <a href="recipe-muffins.html" class="button">View Recipe</a>
+        </div>
+    </section>
+</main>
 
-.recipe-image {
-    width: 100%;
-    height: auto;
-    max-height: 500px;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
-}
+</body>
+</html>
 
-.recipe-image:hover {
-    transform: scale(1.02);
-}
-
-.recipe-title {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 20px;
-    line-height: 1.2;
-}
-
-.recipe-meta {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 25px;
-    color: #666;
-    font-size: 0.95rem;
-}
-
-.recipe-description {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #444;
-    margin-bottom: 30px;
-}
-
-.recipe-content {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 40px;
-}
-
-.recipe-ingredients {
-    background: white;
-    padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    height: fit-content;
-    position: sticky;
-    top: 120px;
-}
-
-.recipe-instructions {
-    background: white;
-    padding: 40px;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-}
-
-.section-title {
-    font-size: 1.5rem;
-    color: #FFB6C1;
-    margin-bottom: 25px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid rgba(255, 182, 193, 0.3);
-}
-
-.ingredients-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.ingredients-list li {
-    margin-bottom: 12px;
-    padding-left: 25px;
-    position: relative;
-    line-height: 1.6;
-}
-
-.ingredients-list li:before {
-    content: "•";
-    color: #FFB6C1;
-    font-size: 1.5rem;
-    position: absolute;
-    left: 0;
-    top: -5px;
-}
-
-.instructions-list {
-    padding-left: 20px;
-}
-
-.instructions-list li {
-    margin-bottom: 25px;
-    line-height: 1.8;
-    color: #444;
-}
-
-.recipe-notes {
-    background: #FFF9FA;
-    padding: 25px;
-    border-radius: 12px;
-    margin-top: 40px;
-    border-left: 4px solid #FFB6C1;
-}
-
-/* Remove mobile toggle and mobile-specific styles */
-
-/* Remove mobile toggle button */
-.nav-toggle {
-    display: none;
-}
-
-/* Recipe Content Adjustments */
-@media (max-width: 992px) {
-    .recipe-hero {
-        grid-template-columns: 1fr;
-    }
-
-    .recipe-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .recipe-ingredients {
-        position: static;
-    }
-}
-
-@media (max-width: 768px) {
-    .recipe-page {
-        padding: 90px 15px 40px;
-    }
-
-    .recipe-title {
-        font-size: 2rem;
-    }
-
-    .recipe-hero {
-        gap: 30px;
-        margin-bottom: 40px;
-    }
-
-    .recipe-ingredients,
-    .recipe-instructions {
-        padding: 25px;
-    }
-}
