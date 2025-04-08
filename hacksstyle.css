@@ -69,7 +69,7 @@ main {
 
 /* Tips/Hacks Content */
 main {
-    padding-top: 100px; /* Ensure content is not hidden under the fixed navbar */
+    padding-top: 50px; /* Ensure content is not hidden under the fixed navbar */
 }
 
 .section-header {
