@@ -1,77 +1,223 @@
-<!DOCTYPE html>
-<html lang="en">
+/* General Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hacks and Tips - Gluten Free & Dairy Free</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your external CSS file -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=DM+Sans:wght@400;500&display=swap"
-        rel="stylesheet">
-</head>
+/* Navigation Bar Styling */
+#header {
+    background: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
 
-<body>
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    <!-- Navigation Bar -->
-    <header id="header">
-        <div class="container">
-            <a href="index.html">
-                <img src="images/Logo.png" alt="Flourish & Free Logo" class="logo">
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="browseallrecipes.html">Recipes</a></li>
-                    <li><a href="Hacks.html" class="active">Tips/Hacks</a></li>
-                    <li><a href="#">Gallery</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+.logo {
+    height: 50px;
+}
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Hacks and Tips</h1>
-        <p>Learn the best tips and tricks for gluten-free and dairy-free baking.</p>
-    </section>
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
 
-    <!-- Hacks Section -->
-    <main>
-        <section class="section-title">
-            <h2>Flour Substitutes</h2>
-        </section>
-        <section class="hacks-list">
-            <!-- First Hack Card -->
-            <div class="hack-card">
-                <img src="images/flour-substitute.jpg" alt="Flour Substitutes">
-                <h3>Flour Substitutes</h3>
-                <p>Discover the best flour substitutes for gluten-free baking.</p>
-                <a href="flour-substitutes.html" class="btn">Learn More</a>
-            </div>
+nav ul li a {
+    position: relative;
+    text-decoration: none;
+    color: #333;
+    padding-bottom: 8px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
 
-            <!-- Second Hack Card -->
-            <div class="hack-card">
-                <img src="images/baking-tips.jpg" alt="Baking Tips">
-                <h3>Baking Tips for Better Results</h3>
-                <p>Improve your baking skills with these expert tips for perfect gluten-free and dairy-free treats.</p>
-                <a href="baking-tips.html" class="btn">Learn More</a>
-            </div>
+/* Active link underline */
+nav ul li a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #FFB6C1;
+    border-radius: 3px;
+}
 
-            <!-- Third Hack Card -->
-            <div class="hack-card">
-                <img src="images/ingredient-substitutes.jpg" alt="Ingredient Substitutes">
-                <h3>Ingredient Substitutes</h3>
-                <p>Need to swap ingredients? Here are some perfect substitutes for dairy and gluten ingredients.</p>
-                <a href="ingredient-substitutes.html" class="btn">Learn More</a>
-            </div>
-        </section>
-    </main>
+/* Hover state */
+nav ul li a:hover {
+    color: #FFB6C1;
+}
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2025 Flourish & Free. All rights reserved.</p>
-    </footer>
+/* Main Content Styling */
+main {
+    margin-top: 100px; /* Ensure content isn't hidden behind the fixed navbar */
+    padding: 0 20px;
+}
 
-</body>
+/* Hero Section */
+.hero {
+    background-color: #FFB6C1;
+    padding: 50px 0;
+    text-align: center;
+    color: white;
+}
 
-</html>
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Section Title Styling */
+.section-title {
+    font-size: 1.8rem;
+    color: #FFB6C1;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(255, 182, 193, 0.3);
+}
+
+/* Hacks List */
+.hacks-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.hack-card {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.hack-card:hover {
+    transform: scale(1.05);
+}
+
+.hack-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.hack-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.hack-card p {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.hack-card a {
+    text-decoration: none;
+    background-color: #FFB6C1;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.hack-card a:hover {
+    background-color: #ff9aa8;
+}
+
+/* Mobile Responsive Styling */
+@media (max-width: 992px) {
+    .hacks-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .hacks-list {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hacks-list .hack-card {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hacks-list {
+        padding: 0 20px;
+    }
+}
+
+/* Footer Styling */
+footer {
+    background: #FFB6C1;
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* General Button Styling */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FFB6C1;
+    color: black;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 400;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #ff9aa8;
+}
+
