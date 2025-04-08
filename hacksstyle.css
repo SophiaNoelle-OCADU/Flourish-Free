@@ -1,35 +1,41 @@
-/* General Styles */
+/* Global Styles */
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'DM Sans', sans-serif;
+    background-color: #F8F7F4;
     margin: 0;
     padding: 0;
-    background-color: #fff;
     color: #333;
 }
 
-/* Navigation Bar Styling */
-#header {
+.container {
+    width: 80%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
     background: white;
     padding: 15px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
+    transition: opacity 0.5s ease-in-out;
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo {
-    height: 50px;
+    height: auto;
+    max-height: 1in;
+    width: auto;
+    max-width: 100px;
 }
 
 nav ul {
@@ -37,159 +43,81 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 20px;
+}
+
+nav ul li {
+    margin-left: 20px;
 }
 
 nav ul li a {
-    position: relative;
     text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
     color: #333;
-    padding-bottom: 8px;
-    transition: all 0.3s ease;
-    display: inline-block;
+    transition: color 0.3s;
 }
 
-/* Active link underline */
-nav ul li a.active::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 3px;
-    width: 100%;
-    background-color: #FFB6C1;
-    border-radius: 3px;
-}
-
-/* Hover state */
 nav ul li a:hover {
     color: #FFB6C1;
 }
 
-/* Main Content Styling */
+/* Tips/Hacks Content */
 main {
-    margin-top: 100px; /* Ensure content isn't hidden behind the fixed navbar */
-    padding: 0 20px;
+    padding-top: 100px; /* Ensure content is not hidden under the fixed navbar */
 }
 
-/* Hero Section */
-.hero {
-    background-color: #FFB6C1;
-    padding: 50px 0;
-    text-align: center;
-    color: white;
-}
-
-.hero h1 {
-    font-size: 3rem;
+.section-header {
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    text-align: left;
     margin-bottom: 20px;
+    border-bottom: 2px solid #FFB6C1;
+    padding-bottom: 5px;
 }
 
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
 }
 
-/* Section Title Styling */
-.section-title {
-    font-size: 1.8rem;
-    color: #FFB6C1;
-    margin-bottom: 25px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid rgba(255, 182, 193, 0.3);
-}
-
-/* Hacks List */
-.hacks-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.hack-card {
+.modular-section {
     background: white;
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
+    border-radius: 14px;
+    width: 250px;
+    height: 150px;
+    padding: 11px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.hack-card:hover {
-    transform: scale(1.05);
+.modular-section h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 1px;
 }
 
-.hack-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 20px;
+.modular-section ul {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    padding-left: 20px;
+    margin-top: 0;
 }
 
-.hack-card h3 {
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-    color: #333;
+.modular-section ul li {
+    margin-bottom: 5px;
 }
 
-.hack-card p {
-    font-size: 1rem;
-    color: #444;
-    margin-bottom: 20px;
-}
-
-.hack-card a {
-    text-decoration: none;
-    background-color: #FFB6C1;
-    color: black;
-    padding: 10px 20px;
-    border-radius: 5px;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-}
-
-.hack-card a:hover {
-    background-color: #ff9aa8;
-}
-
-/* Mobile Responsive Styling */
-@media (max-width: 992px) {
-    .hacks-list {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-    .hacks-list {
-        grid-template-columns: 1fr;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .hacks-list .hack-card {
-        padding: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 1.8rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .hacks-list {
-        padding: 0 20px;
-    }
-}
+.modular-section p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    margin: 0;
+} 
 
 /* Footer Styling */
 footer {
