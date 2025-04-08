@@ -16,45 +16,55 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="browseallrecipes.html" class="active" >Recipes</a></li>
+                <li><a href="browseallrecipes.html" class="active">Recipes</a></li>
                 <li><a href="Hacks.html">Tips/Hacks</a></li>
                 <li><a href="#">Gallery</a></li>
             </ul>
         </nav>
+        <!-- Mobile Toggle Button -->
+        <button class="nav-toggle" aria-label="Open navigation">☰</button>
     </div>
 </header>
 
-    <main>
-        <section class="hero">
-            <h1>BROWSE ALL RECIPES</h1>
-            <p>Not sure what to make? Discover a variety of delicious gluten-free and dairy-free recipes for every craving.</p>
-        </section>
+<main>
+    <section class="hero">
+        <h1>BROWSE ALL RECIPES</h1>
+        <p>Not sure what to make? Discover a variety of delicious gluten-free and dairy-free recipes for every craving.</p>
+    </section>
 
-        <section class="recipe-grid">
-            <!- Recipe Card 1 ->
-            <div class="recipe-card">
-                <img src="images/joyful-G4zLsxLIpAA-unsplash.jpg" alt="Coconut Oil Chocolate Cookies">
-                <h3>Coconut Oil Chocolate Cookies</h3>
-                <p>One bowl simple chocolate chip cookie recipe made from standard ingredients we all usually have in our pantries.</p>
-                <a href="chocolatechipcookies.html" class="button">View Recipe</a>
-            </div>
+    <section class="recipe-grid">
+        <!-- Recipe Cards -->
+        <div class="recipe-card">
+            <img src="images/joyful-G4zLsxLIpAA-unsplash.jpg" alt="Coconut Oil Chocolate Cookies">
+            <h3>Coconut Oil Chocolate Cookies</h3>
+            <p>One bowl simple chocolate chip cookie recipe made from standard ingredients we all usually have in our pantries.</p>
+            <a href="chocolatechipcookies.html" class="button">View Recipe</a>
+        </div>
+        <div class="recipe-card">
+            <img src="images/priscilla-du-preez-8vKxl0uxyYc-unsplash (1).jpg" alt="Peanut Butter Bread">
+            <h3>Peanut Butter Bread</h3>
+            <p>Deliciously moist peanut butter banana bread made with gluten-free and dairy-free ingredients, perfect for a wholesome treat.</p>
+            <a href="recipe-peanut-bread.html" class="button">View Recipe</a>
+        </div>
+        <div class="recipe-card">
+            <img src="images/alina-karpenko-d8GDJalt_BE-unsplash (1).jpg" alt="Bakery Style Muffins">
+            <h3>Bakery Style Muffins</h3>
+            <p>Fluffy bakery-style muffins created from some basic ingredients, ideal for a delightful morning snack.</p>
+            <a href="recipe-muffins.html" class="button">View Recipe</a>
+        </div>
+    </section>
+</main>
 
-            <!- Recipe Card 2 ->
-            <div class="recipe-card">
-                <img src="images/priscilla-du-preez-8vKxl0uxyYc-unsplash (1).jpg" alt="Peanut Butter Bread">
-                <h3>Peanut Butter Bread</h3>
-                <p>Deliciously moist peanut butter banana bread made with gluten-free and dairy-free ingredients, perfect for a wholesome treat.</p>
-                <a href="recipe-peanut-bread.html" class="button">View Recipe</a>
-            </div>
+<script>
+    // Mobile Menu Toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('nav');
 
-            <!- Recipe Card 3 ->
-            <div class="recipe-card">
-                <img src="images/alina-karpenko-d8GDJalt_BE-unsplash (1).jpg" alt="Bakery Style Muffins">
-                <h3>Bakery Style Muffins</h3>
-                <p>Fluffy bakery-style muffins created from some basic ingredients, ideal for a delightful morning snack.</p>
-                <a href="recipe-muffins.html" class="button">View Recipe</a>
-            </div>
-        </section>
-    </main>
+    navToggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
+</script>
+
 </body>
 </html>
+
