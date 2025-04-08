@@ -39,32 +39,23 @@ nav ul li {
 }
 
 nav ul li a {
-    text-decoration: none;
-    font-size: 1em;
-    color: #333;
-    font-weight: 400;
-}
-
-nav ul li a.active,
-nav ul li a:hover {
-    color: #FFB6C1;
-    nav ul li a {
     position: relative;
     text-decoration: none;
     color: #333;
-    padding-bottom: 5px;
+    padding-bottom: 8px;
     transition: all 0.3s ease;
 }
 
+/* Active link underline */
 nav ul li a.active::after {
     content: "";
     position: absolute;
     left: 0;
     bottom: 0;
+    height: 6px;
     width: 100%;
-    height: 6px; /* thickness of the underline */
-    background-color: #ff69b4; /* pick your pink */
-    border-radius: 3px;
+    background-color: #ff69b4; /* pink underline */
+    border-radius: 5px;
 }
 
 }
