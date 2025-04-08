@@ -83,19 +83,9 @@ nav ul li a:hover {
     transform: translateY(-2px);
 }
 
-/* Mobile Toggle Button */
-.nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #333;
-}
-
 /* Main Content */
 main {
-    padding-top: 100px;
+    padding-top: 100px; /* To avoid overlap with fixed header */
     padding-bottom: 50px;
 }
 
@@ -171,28 +161,7 @@ main {
         width: 95%;
         padding: 0 15px;
     }
-    
-    .nav-toggle {
-        display: block;
-    }
-    
-    nav ul {
-        display: none;
-        flex-direction: column;
-        gap: 15px;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background: white;
-        padding: 20px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    
-    nav ul.active {
-        display: flex;
-    }
-    
+
     main {
         padding-top: 90px;
     }
@@ -217,3 +186,4 @@ main {
         padding: 18px;
     }
 }
+
