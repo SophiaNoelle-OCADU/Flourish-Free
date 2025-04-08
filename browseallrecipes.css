@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    font-family: 'DM Sans', sans-serif;  /* Change the body font to DM Sans */
+    font-family: 'DM Sans', sans-serif; /* Use DM Sans font */
     background-color: #F8F7F4;
     margin: 0;
     padding: 0;
@@ -38,7 +38,7 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 20px; /* Flexbox gap for nav items */
+    gap: 20px;
 }
 
 nav ul li a {
@@ -66,11 +66,29 @@ nav ul li a:hover {
     color: #FFB6C1;
 }
 
-/* Recipe Section */
+/* Main Section Adjustments */
 main {
-    margin-top: 100px; /* Ensure the content doesn't get hidden under the fixed navbar */
+    margin-top: 100px; /* Push content down to avoid overlap with fixed navbar */
 }
 
+/* Hero Section */
+.hero {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Recipe Grid Section */
 .recipe-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -80,13 +98,13 @@ main {
     margin: 0 auto;
 }
 
+/* Recipe Card Styling */
 .recipe-card {
     background-color: white;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    text-align: left;
     padding: 20px;
+    text-align: left;
 }
 
 .recipe-card img {
@@ -100,14 +118,14 @@ main {
     font-size: 1.5rem;
     color: #333;
     margin-top: 15px;
-    font-family: 'DM Sans', sans-serif;  /* Change to DM Sans */
+    font-family: 'DM Sans', sans-serif; /* Change to DM Sans */
 }
 
 .recipe-card p {
     font-size: 1rem;
     color: #666;
     margin-top: 10px;
-    font-family: 'DM Sans', sans-serif;  /* Change to DM Sans */
+    font-family: 'DM Sans', sans-serif; /* Change to DM Sans */
 }
 
 /* Button Styling */
@@ -135,6 +153,15 @@ main {
     .recipe-card p {
         font-size: 0.9rem; /* Adjust font size for smaller screens */
     }
+
+    .hero h1 {
+        font-size: 2rem; /* Adjust for mobile */
+    }
+
+    .hero p {
+        font-size: 1rem; /* Adjust for mobile */
+    }
 }
+
 
 
