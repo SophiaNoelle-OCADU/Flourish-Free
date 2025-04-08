@@ -1,19 +1,23 @@
 /* Global Styles */
 body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
     background-color: #F8F7F4;
     margin: 0;
     padding: 0;
     color: #333;
 }
 
+/* Unified Container */
 .container {
-    width: 80%;
-    max-width: 1100px;
+    width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Header */
+/* Header / Navigation Bar */
 header {
     background: white;
     padding: 15px 0;
@@ -22,60 +26,69 @@ header {
     top: 0;
     left: 0;
     z-index: 1000;
-    transition: opacity 0.5s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
+/* Logo */
 .logo {
-    height: auto;
-    max-height: 1in;
+    height: 50px;
     width: auto;
     max-width: 100px;
 }
 
+/* Navigation Styles */
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-}
-
-nav ul li {
-    margin-left: 20px;
+    gap: 20px;
 }
 
 nav ul li a {
+    position: relative;
     text-decoration: none;
-    font-family: 'Inter', sans-serif;
     font-weight: 600;
     color: #333;
-    transition: color 0.3s;
+    padding-bottom: 8px;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
+/* Active Link Underline */
+nav ul li a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #FFB6C1;
+    border-radius: 3px;
+}
+
+/* Hover State */
 nav ul li a:hover {
     color: #FFB6C1;
 }
 
-/* Tips/Hacks Content */
+/* Main Content */
 main {
     padding-top: 100px;
 }
 
 .section-header {
-    font-family: 'Inter', sans-serif;
-    font-size: 32px;
-    font-weight: 600;
+    font-size: 2em;
+    font-weight: 400;
+    color: #FFB6C1;
     text-align: left;
     margin-bottom: 20px;
     border-bottom: 2px solid #FFB6C1;
     padding-bottom: 5px;
+    font-family: 'Inter', sans-serif;
 }
 
+/* Grid & Modular Sections */
 .grid {
     display: flex;
     flex-wrap: wrap;
@@ -96,17 +109,17 @@ main {
 }
 
 .modular-section h2 {
-    font-family: 'Inter', sans-serif;
     font-size: 16px;
     font-weight: 400;
     margin-bottom: 1px;
+    font-family: 'Inter', sans-serif;
 }
 
 .modular-section ul {
-    font-family: 'DM Sans', sans-serif;
     font-size: 14px;
     padding-left: 20px;
     margin-top: 0;
+    font-family: 'DM Sans', sans-serif;
 }
 
 .modular-section ul li {
@@ -114,7 +127,7 @@ main {
 }
 
 .modular-section p {
-    font-family: 'DM Sans', sans-serif;
     font-size: 14px;
     margin: 0;
+    font-family: 'DM Sans', sans-serif;
 }
