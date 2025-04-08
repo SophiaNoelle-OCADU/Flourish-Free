@@ -6,14 +6,7 @@ body {
     padding: 0;
     color: #333;
 }
-
-.container {
-    width: 80%;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-/* Header */
+/* ===== FIXED NAVBAR ===== */
 header {
     background: white;
     padding: 15px 0;
@@ -22,43 +15,58 @@ header {
     top: 0;
     left: 0;
     z-index: 1000;
-    transition: opacity 0.5s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-header .container {
+.container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .logo {
     height: auto;
-    max-height: 1in;
+    max-height: 1.5in;
     width: auto;
-    max-width: 100px;
+    max-width: 200px;
 }
 
 nav ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
+    gap: 20px;
 }
 
-nav ul li {
-    margin-left: 20px;
-}
-
-nav ul li a {
+nav a {
     text-decoration: none;
+    color: #333;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
-    color: #333;
-    transition: color 0.3s;
+    position: relative;
+    padding-bottom: 5px;
 }
 
-nav ul li a:hover {
+nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #FFB6C1;
+}
+
+nav a:hover {
     color: #FFB6C1;
+}
+
+/* ===== MAIN CONTENT (PUSHED BELOW NAVBAR) ===== */
+main {
+    margin-top: 80px;
+    padding: 20px;
 }
 
 /* Tips/Hacks Content */
