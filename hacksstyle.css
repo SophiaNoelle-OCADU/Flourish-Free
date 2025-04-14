@@ -64,6 +64,7 @@ nav ul li a:hover {
 /* Tips/Hacks Content */
 main {
     padding-top: 100px;
+    padding-bottom: 20px; /* Padding at the end of the page */
 }
 
 .section-header {
@@ -87,7 +88,7 @@ main {
     background: white;
     border-radius: 14px;
     width: 250px;
-    height: 150px;
+    height: 180px; /* Extended height for blends section */
     padding: 11px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -147,11 +148,6 @@ footer p {
 
 .btn:hover {
     background-color: #ff9aa8;
-}
-
-/* Padding at the end of the page */
-main {
-    padding-bottom: 20px;
 }
 
 
