@@ -88,7 +88,7 @@ main {
     background: white;
     border-radius: 14px;
     width: 250px;
-    height: 180px; /* Extended height for blends section */
+    height: 200px; /* Extended height for blends and temperature tips sections */
     padding: 11px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -149,5 +149,4 @@ footer p {
 .btn:hover {
     background-color: #ff9aa8;
 }
-
 
