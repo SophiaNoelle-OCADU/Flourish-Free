@@ -68,6 +68,10 @@ nav ul li a:hover {
     height: 600px; /* Shorter height */
     margin: 18px auto 0;
     overflow: hidden;
+    padding: 40px; /* Increased padding */
+    border-radius: 15px; /* Rounded edges */
+    background-color: white; /* White background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
 }
 
 .recipe-image {
@@ -77,15 +81,16 @@ nav ul li a:hover {
     position: absolute;
     left: 0;
     top: 0;
+    border-radius: 15px; /* Rounded edges */
 }
 
 .header-content {
-    position: absolute;
+    position: relative; /* Changed to relative */
     top: 200px;
     left: 104px;
     max-width: 500px;
     z-index: 2;
-    animation: slideUpFade 1s ease-out; /* Added animation */
+    animation: fadeIn 1s ease-out; /* Updated animation */
 }
 
 .header-content h1 {
@@ -117,7 +122,7 @@ nav ul li a:hover {
 }
 
 /* White block under text and button */
-.header-content::before {
+.header-container::before {
     content: "";
     position: absolute;
     left: 0;
@@ -127,6 +132,7 @@ nav ul li a:hover {
     background-color: white;
     opacity: 0.8;
     z-index: -1;
+    border-radius: 15px; /* Rounded edges */
 }
 
 /* About Section */
@@ -205,13 +211,11 @@ nav ul li a:hover {
 }
 
 /* Slide up fade animation */
-@keyframes slideUpFade {
+@keyframes fadeIn {
     0% {
-        transform: translateY(20px);
         opacity: 0;
     }
     100% {
-        transform: translateY(0);
         opacity: 1;
     }
 }
