@@ -1,41 +1,41 @@
 /* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'DM Sans', sans-serif;
     background-color: #F8F7F4;
-    margin: 0;
-    padding: 0;
     color: #333;
+    line-height: 1.6;
 }
 
-.container {
-    width: 80%;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-/* Header */
-header {
+/* ===== NAVIGATION BAR (MATCHING STYLE) ===== */
+#header {
     background: white;
     padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
-    left: 0;
     z-index: 1000;
     transition: opacity 0.5s ease-in-out;
 }
 
-header .container {
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo {
-    height: auto; /* Set height to auto */
-    max-height: 1.5in; /* Ensure it doesn't exceed a certain height */
+    height: 50px;
     width: auto;
-    max-width: 200px; /* Ensure it doesn't exceed a certain width */
 }
 
 nav ul {
@@ -43,42 +43,56 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-}
-
-nav ul li {
-    margin-left: 20px;
+    gap: 20px;
 }
 
 nav ul li a {
+    position: relative;
     text-decoration: none;
+    color: #333;
+    padding-bottom: 8px;
+    transition: all 0.3s ease;
+    display: inline-block;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
-    color: #333;
-    transition: color 0.3s;
 }
 
+/* Active link underline */
+nav ul li a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #FFB6C1;
+    border-radius: 3px;
+}
+
+/* Hover state */
 nav ul li a:hover {
     color: #FFB6C1;
 }
 
-/* Recipe Content */
+/* ===== RECIPE CONTENT ===== */
 main {
-    padding-top: 100px;
+    margin-top: 80px;
+    padding: 20px;
 }
 
 .recipe h1 {
     font-family: 'Inter', sans-serif;
-    font-size: 32px;
+    font-size: 2rem;
     font-weight: 600;
 }
 
 .recipe .description {
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.6;
 }
 
 .recipe .meta {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 600;
     color: #666;
 }
@@ -87,25 +101,16 @@ main {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+    gap: 30px;
 }
 
-@media (max-width: 800px) {
-    .ingredients, .instructions {
-        width: 100%;
-    }
+.ingredients, .instructions {
+    flex: 1;
 }
-
-/* Desktop version? */
-@media (min-width: 801px) {
-    .ingredients, .instructions {
-        width: 52%; /* Reduce width to create more space */
-    }
-}
-
 
 .ingredients h2, .instructions h2 {
     font-family: 'Inter', sans-serif;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 600;
     border-bottom: 2px solid #FFB6C1;
     padding-bottom: 5px;
@@ -115,30 +120,40 @@ main {
     padding-left: 20px;
 }
 
- .recipe-image {
-    width: 45%; /* 45% width of its container */
-    height: auto; /* aspect ratio */
-    max-height: 500px; /* Set a max height */
-    object-fit: cover; /* Crop the image to fit the container */
+.recipe-image {
+    width: 45%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
     margin-top: 20px;
-    margin-left: 10%; /* Add margin to ensure space between text and image */
-    display: block;
-    border-radius: 34px;
+    border-radius: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
-    
-
-@media (max-width: 800px) { .recipe-image {
-    width: 100%; 
-    height: auto; /* Maintain aspect ratio */
-    max-height: 500px; /* Set a max height */
-    object-fit: cover; /* Crop the image to fit the container */
-    margin-top: 20px;
-    margin-left: 10%; /* Add margin to ensure space between text and image */
-    display: block;
-}
-    }
 
 /* Fade Out Header */
 .hidden {
     opacity: 0;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 800px) {
+    .content {
+        flex-direction: column;
+    }
+    
+    .recipe-image {
+        width: 100%;
+        margin-left: 0;
+        order: -1;
+    }
+    
+    #header {
+        padding: 10px 0;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 15px;
+    }
 }
