@@ -25,44 +25,49 @@
     </header>
 
     <main>
-        <!-- Modern Breadcrumb Navigation -->
+        <!-- Debugged Breadcrumb Navigation -->
         <nav class="breadcrumbs" aria-label="Breadcrumb navigation">
+            <ol id="breadcrumb-list">
+                <!-- Fallback content that will be replaced by JS -->
+                <li><a href="/">Home</a></li>
+                <li aria-current="page">Gallery</li>
+            </ol>
             <script>
-                // Custom breadcrumb generator with pretty names
-                const container = document.currentScript.parentElement;
-                const path = window.location.pathname;
-                const crumbs = path.split('/').filter(Boolean);
-                
-                // Custom labels for specific pages
-                const prettyNames = {
-                    'browseallrecipes.html': 'All Recipes',
-                    'Hacks.html': 'Tips & Hacks',
-                    'gallery.html': 'Gallery',
-                    'chocolatechipcookies.html': 'Chocolate Chip Cookies',
-                    'peanutbutterbread.html': 'Peanut Butter Bread',
-                    'recipe2.html': 'Bakery Muffins',
-                    'recipe4.html': 'New Recipe'
-                };
-
-                let html = '<ol>';
-                html += '<li><a href="/">Home</a></li>';
-                
-                let currentPath = '';
-                crumbs.forEach((crumb, i) => {
-                    currentPath += '/' + crumb;
-                    const name = prettyNames[crumb] || 
-                                 crumb.replace('.html', '')
-                                      .replace(/-/g, ' ')
-                                      .replace(/\b\w/g, c => c.toUpperCase());
+                document.addEventListener('DOMContentLoaded', function() {
+                    const container = document.getElementById('breadcrumb-list');
+                    const path = window.location.pathname;
+                    const crumbs = path.split('/').filter(part => part !== '' && !part.includes('.html'));
                     
-                    if (i === crumbs.length - 1) {
-                        html += `<li aria-current="page">${name}</li>`;
-                    } else {
-                        html += `<li><a href="${currentPath}">${name}</a></li>`;
-                    }
+                    // Custom labels
+                    const prettyNames = {
+                        'browseallrecipes': 'All Recipes',
+                        'Hacks': 'Tips & Hacks',
+                        'gallery': 'Gallery',
+                        'chocolatechipcookies': 'Chocolate Chip Cookies',
+                        'peanutbutterbread': 'Peanut Butter Bread',
+                        'recipe2': 'Bakery Muffins',
+                        'recipe4': 'New Recipe'
+                    };
+
+                    let html = '<li><a href="/">Home</a></li>';
+                    let currentPath = '';
+                    
+                    crumbs.forEach((crumb, i) => {
+                        currentPath += '/' + crumb;
+                        const name = prettyNames[crumb] || 
+                                    crumb.replace(/-/g, ' ')
+                                         .replace(/\b\w/g, c => c.toUpperCase());
+                        
+                        if (i === crumbs.length - 1) {
+                            html += `<li aria-current="page">${name}</li>`;
+                        } else {
+                            // Ensure .html is added back for links
+                            html += `<li><a href="${currentPath}.html">${name}</a></li>`;
+                        }
+                    });
+                    
+                    container.innerHTML = html;
                 });
-                
-                container.innerHTML = html + '</ol>';
             </script>
         </nav>
         
