@@ -73,52 +73,58 @@ nav ul li a:hover {
     color: #FFB6C1;
 }
 
-/* ===== BREADCRUMB STYLES ===== */
-.breadcrumb {
-    padding: 1rem 0;
-    margin: 0 auto;
+/* ===== MODERN BREADCRUMBS ===== */
+.breadcrumbs {
     width: 90%;
     max-width: 1200px;
+    margin: 0 auto 1.5rem;
+    padding: 0.5rem 0;
     font-family: 'DM Sans', sans-serif;
 }
 
-.breadcrumb ol {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.breadcrumbs ol {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.25rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.breadcrumb li {
+.breadcrumbs li {
     display: flex;
     align-items: center;
-    color: #666;
     font-size: 0.9rem;
+    font-weight: 400;
+    color: #888;
+    transition: all 0.2s ease;
 }
 
-.breadcrumb li:not(:last-child)::after {
-    content: '/';
-    margin-left: 0.5rem;
-    color: #999;
+.breadcrumbs li:not(:last-child)::after {
+    content: '›';
+    margin: 0 0.5rem;
+    color: #ccc;
+    font-size: 1.1rem;
 }
 
-.breadcrumb a {
+.breadcrumbs a {
     color: #FFB6C1;
     text-decoration: none;
-    transition: color 0.3s ease;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
 }
 
-.breadcrumb a:hover {
+.breadcrumbs a:hover {
     color: #ff9aa8;
-    text-decoration: underline;
+    background: rgba(255, 182, 193, 0.1);
 }
 
-.breadcrumb [aria-current="page"] {
-    color: #333;
-    font-weight: 600;
+.breadcrumbs [aria-current="page"] {
+    color: #666;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
 }
 
 /* ===== GALLERY CONTENT ===== */
@@ -242,11 +248,22 @@ main {
         margin-bottom: 20px;
     }
     
-    .breadcrumb li {
+    /* Mobile breadcrumbs */
+    .breadcrumbs {
+        margin-bottom: 1rem;
+        padding: 0 0.5rem;
+    }
+    
+    .breadcrumbs li {
         font-size: 0.8rem;
     }
     
-    .breadcrumb {
-        padding: 0.5rem 0;
+    .breadcrumbs li::after {
+        margin: 0 0.35rem;
+    }
+    
+    .breadcrumbs a,
+    .breadcrumbs [aria-current="page"] {
+        padding: 0.15rem 0.3rem;
     }
 }

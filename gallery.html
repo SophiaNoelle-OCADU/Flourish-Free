@@ -25,36 +25,44 @@
     </header>
 
     <main>
-        <!-- Breadcrumb Navigation -->
-        <nav class="breadcrumb" aria-label="Breadcrumb">
+        <!-- Modern Breadcrumb Navigation -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb navigation">
             <script>
-                // Enhanced breadcrumb generator
-                const breadcrumbContainer = document.currentScript.parentElement;
+                // Custom breadcrumb generator with pretty names
+                const container = document.currentScript.parentElement;
                 const path = window.location.pathname;
-                const pathParts = path.split('/').filter(part => part !== '');
+                const crumbs = path.split('/').filter(Boolean);
                 
-                // Special case for home page
-                if (pathParts.length === 0) {
-                    breadcrumbContainer.innerHTML = '<ol><li aria-current="page">Home</li></ol>';
-                } else {
-                    let breadcrumbHTML = '<ol><li><a href="/">Home</a></li>';
-                    let accumulatedPath = '';
+                // Custom labels for specific pages
+                const prettyNames = {
+                    'browseallrecipes.html': 'All Recipes',
+                    'Hacks.html': 'Tips & Hacks',
+                    'gallery.html': 'Gallery',
+                    'chocolatechipcookies.html': 'Chocolate Chip Cookies',
+                    'peanutbutterbread.html': 'Peanut Butter Bread',
+                    'recipe2.html': 'Bakery Muffins',
+                    'recipe4.html': 'New Recipe'
+                };
+
+                let html = '<ol>';
+                html += '<li><a href="/">Home</a></li>';
+                
+                let currentPath = '';
+                crumbs.forEach((crumb, i) => {
+                    currentPath += '/' + crumb;
+                    const name = prettyNames[crumb] || 
+                                 crumb.replace('.html', '')
+                                      .replace(/-/g, ' ')
+                                      .replace(/\b\w/g, c => c.toUpperCase());
                     
-                    pathParts.forEach((part, i) => {
-                        accumulatedPath += '/' + part;
-                        const displayName = part.replace('.html', '').replace(/-/g, ' ');
-                        const prettyName = displayName.replace(/\b\w/g, l => l.toUpperCase());
-                        
-                        if (i === pathParts.length - 1) {
-                            breadcrumbHTML += `<li aria-current="page">${prettyName}</li>`;
-                        } else {
-                            breadcrumbHTML += `<li><a href="${accumulatedPath}">${prettyName}</a></li>`;
-                        }
-                    });
-                    
-                    breadcrumbHTML += '</ol>';
-                    breadcrumbContainer.innerHTML = breadcrumbHTML;
-                }
+                    if (i === crumbs.length - 1) {
+                        html += `<li aria-current="page">${name}</li>`;
+                    } else {
+                        html += `<li><a href="${currentPath}">${name}</a></li>`;
+                    }
+                });
+                
+                container.innerHTML = html + '</ol>';
             </script>
         </nav>
         
