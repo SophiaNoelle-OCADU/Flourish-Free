@@ -1,8 +1,9 @@
-/* Global Styles */
+/* ===== GLOBAL STYLES ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    cursor: url(https://cur.cursors-4u.net/food/foo-5/foo518.cur), auto !important;
 }
 
 body {
@@ -12,7 +13,7 @@ body {
     line-height: 1.6;
 }
 
-/* Navigation Bar - Matching Style */
+/* ===== NAVIGATION BAR ===== */
 #header {
     background: white;
     padding: 15px 0;
@@ -34,6 +35,7 @@ body {
 
 .logo {
     height: 50px;
+    width: auto;
 }
 
 nav ul {
@@ -71,13 +73,66 @@ nav ul li a:hover {
     color: #FFB6C1;
 }
 
+/* ===== MODERN BREADCRUMBS ===== */
+.breadcrumbs {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto 1rem;
+    padding: 0.5rem 0;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumbs li {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #888;
+    transition: all 0.2s ease;
+}
+
+.breadcrumbs li:not(:last-child)::after {
+    content: '›';
+    margin: 0 0.5rem;
+    color: #ccc;
+    font-size: 1.1rem;
+}
+
+.breadcrumbs a {
+    color: #FFB6C1;
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.breadcrumbs a:hover {
+    color: #ff9aa8;
+    background: rgba(255, 182, 193, 0.1);
+}
+
+.breadcrumbs [aria-current="page"] {
+    color: #666;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+}
+
 /* ===== MAIN CONTENT ===== */
 main {
     margin-top: 80px;
     padding: 20px 0;
 }
 
-/* Restore your original content container */
 .main-container {
     width: 80%;
     max-width: 1100px;
@@ -85,10 +140,9 @@ main {
     padding: 20px 0;
 }
 
-/* Section Headers */
 .section-header {
     font-family: 'Inter', sans-serif;
-    font-size: 32px;
+    font-size: 2rem;
     font-weight: 600;
     text-align: left;
     margin-bottom: 20px;
@@ -96,7 +150,6 @@ main {
     padding-bottom: 5px;
 }
 
-/* Grid Layout */
 .grid {
     display: flex;
     flex-wrap: wrap;
@@ -105,7 +158,6 @@ main {
     margin-bottom: 40px;
 }
 
-/* Modular Sections - Restored original dimensions */
 .modular-section {
     background: white;
     border-radius: 14px;
@@ -116,24 +168,24 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: relative; /* Needed for the pseudo-element */
-    overflow: hidden; /* Keeps everything contained */
+    position: relative;
+    overflow: hidden;
 }
 
 .modular-section h2 {
     font-family: 'Inter', sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
     margin-bottom: 1px;
-    
 }
+
 .modular-section.tall {
     height: 230px;
 }
 
 .modular-section ul {
     font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
+    font-size: 0.875rem;
     padding-left: 20px;
     margin-top: 0;
 }
@@ -144,11 +196,11 @@ main {
 
 .modular-section p {
     font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
+    font-size: 0.875rem;
     margin: 0;
 }
 
-/* Mobile Responsiveness */
+/* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
     #header {
         padding: 10px 0;
@@ -172,6 +224,23 @@ main {
         width: 100%;
         height: auto;
     }
-}
 
-/* Start https://www.cursors-4u.com */ * {cursor: url(https://cur.cursors-4u.net/food/foo-5/foo518.cur), auto !important;} /* End https://www.cursors-4u.com */
+    /* Mobile breadcrumbs */
+    .breadcrumbs {
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .breadcrumbs li {
+        font-size: 0.8rem;
+    }
+    
+    .breadcrumbs li::after {
+        margin: 0 0.35rem;
+    }
+    
+    .breadcrumbs a,
+    .breadcrumbs [aria-current="page"] {
+        padding: 0.15rem 0.3rem;
+    }
+}

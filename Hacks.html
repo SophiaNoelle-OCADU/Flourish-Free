@@ -12,7 +12,7 @@
 
     <header id="header">
         <div class="container">
-            <a href="starting.html"><img src="images/Logo.png" alt="Flourish & Free Logo" class="logo"></a>
+            <a href="index.html"><img src="images/Logo.png" alt="Flourish & Free Logo" class="logo"></a>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -25,6 +25,59 @@
     </header>
 
     <main>
+        <!-- Clean Breadcrumb Navigation -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb navigation">
+            <ol id="breadcrumb-list">
+                <li><a href="index.html">Home</a></li>
+                <li aria-current="page">Tips & Hacks</li>
+            </ol>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const container = document.getElementById('breadcrumb-list');
+                    const path = window.location.pathname;
+                    const currentPage = path.split('/').pop() || 'index.html';
+                    
+                    // Map all pages to their display names
+                    const pageNames = {
+                        'index.html': 'Home',
+                        'browseallrecipes.html': 'All Recipes',
+                        'Hacks.html': 'Tips & Hacks',
+                        'gallery.html': 'Gallery',
+                        'chocolatechipcookies.html': 'Chocolate Chip Cookies',
+                        'peanutbutterbread.html': 'Peanut Butter Bread',
+                        'recipe2.html': 'Bakery Muffins',
+                        'recipe4.html': 'Vanilla Cake'
+                    };
+                    
+                    // Start with Home link
+                    let html = '<li><a href="index.html">Home</a></li>';
+                    
+                    // Handle recipe pages specially
+                    const recipePages = [
+                        'chocolatechipcookies.html',
+                        'peanutbutterbread.html',
+                        'recipe2.html',
+                        'recipe4.html'
+                    ];
+                    
+                    if (recipePages.includes(currentPage)) {
+                        // Add Recipes section link
+                        html += '<li><a href="browseallrecipes.html">All Recipes</a></li>';
+                        // Add current recipe
+                        html += `<li aria-current="page">${pageNames[currentPage]}</li>`;
+                    } 
+                    else if (pageNames[currentPage]) {
+                        // For non-recipe pages
+                        if (currentPage !== 'index.html') {
+                            html += `<li aria-current="page">${pageNames[currentPage]}</li>`;
+                        }
+                    }
+                    
+                    container.innerHTML = html;
+                });
+            </script>
+        </nav>
+
         <div class="main-container">
             <h1 class="section-header">Gluten-Free Flour Guide</h1>
             <div class="grid">
@@ -60,7 +113,7 @@
                         <li>General gluten-free flour mix: Oat, almond, and rice flour blend</li>
                     </ul>
                 </section>
-            </div> <!-- Closing grid div -->
+            </div>
 
             <h1 class="section-header">Egg Tips & Substitutes</h1>
             <div class="grid">
@@ -80,7 +133,7 @@
                         <li>Applesauce: 1/4 cup = 1 egg (not for crispy textures)</li>
                     </ul>
                 </section>
-            </div> <!-- Closing grid div -->
+            </div>
 
             <h1 class="section-header">Dairy-Free Milk Alternatives</h1>
             <div class="grid">
@@ -115,8 +168,8 @@
                         <li>1 cup milk + 1 tbsp melted butter</li>
                     </ul>
                 </section>
-            </div> <!-- Closing grid div -->
-        </div> <!-- Closing main-container div -->
+            </div>
+        </div>
     </main>
 
 </body>
