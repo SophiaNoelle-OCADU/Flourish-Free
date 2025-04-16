@@ -224,3 +224,9 @@ nav ul li a:hover {
         opacity: 1;
     }
 }
+.ingredients li, .instructions li {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+}
