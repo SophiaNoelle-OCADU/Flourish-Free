@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: url(https://cur.cursors-4u.net/food/foo-5/foo518.cur), auto !important;
 }
 
 body {
@@ -11,6 +10,24 @@ body {
     background-color: #F8F7F4;
     color: #333;
     line-height: 1.6;
+}
+
+.skip-link {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.skip-link:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0.5rem;
+    background: #D6408A;
+    color: white;
 }
 
 /* ===== NAVIGATION BAR ===== */
@@ -56,7 +73,6 @@ nav ul li a {
     font-weight: 500;
 }
 
-/* Active link underline */
 nav ul li a.active::after {
     content: "";
     position: absolute;
@@ -64,13 +80,17 @@ nav ul li a.active::after {
     bottom: 0;
     height: 3px;
     width: 100%;
-    background-color: #FFB6C1;
+    background-color: #D6408A;
     border-radius: 3px;
 }
 
-/* Hover state */
 nav ul li a:hover {
-    color: #FFB6C1;
+    color: #D6408A;
+}
+
+nav ul li a:focus {
+    outline: 2px solid #D6408A;
+    outline-offset: 4px;
 }
 
 /* ===== MODERN BREADCRUMBS ===== */
@@ -109,7 +129,7 @@ nav ul li a:hover {
 }
 
 .breadcrumbs a {
-    color: #FFB6C1;
+    color: #D6408A;
     text-decoration: none;
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
@@ -117,8 +137,13 @@ nav ul li a:hover {
 }
 
 .breadcrumbs a:hover {
-    color: #ff9aa8;
-    background: rgba(255, 182, 193, 0.1);
+    color: #B83280;
+    background: rgba(214, 64, 138, 0.1);
+}
+
+.breadcrumbs a:focus {
+    outline: 2px solid #D6408A;
+    outline-offset: 2px;
 }
 
 .breadcrumbs [aria-current="page"] {
@@ -145,6 +170,7 @@ main {
     font-family: 'Inter', sans-serif;
     font-size: 2.5rem;
     margin-bottom: 20px;
+    color: #333;
 }
 
 .hero p {
@@ -171,11 +197,13 @@ main {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.recipe-card:hover {
+.recipe-card:hover,
+.recipe-card:focus-within {
     transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .image-container {
@@ -205,7 +233,7 @@ main {
 
 .button {
     display: inline-block;
-    background: #FFB6C1;
+    background: #D6408A;
     color: white;
     padding: 12px 24px;
     border-radius: 8px;
@@ -216,8 +244,11 @@ main {
     transition: background 0.3s;
 }
 
-.button:hover {
-    background: #ff9aa8;
+.button:hover,
+.button:focus {
+    background: #B83280;
+    outline: 2px solid #333;
+    outline-offset: 2px;
 }
 
 /* ===== MOBILE RESPONSIVENESS ===== */
@@ -243,6 +274,9 @@ main {
 
     .recipe-card {
         margin-bottom: 30px;
+        width: 100%;
+        max-width: 371px;
+        height: auto;
     }
 
     /* Mobile breadcrumbs */

@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Recipes - Gluten Free & Dairy Free</title>
+    <title>All Recipes - Gluten Free & Dairy Free - Flourish & Free</title>
+    <meta name="description" content="Browse all gluten-free and dairy-free recipes including cookies, breads, and muffins">
     <link rel="stylesheet" href="browseallrecipes.css">
     <link rel="icon" href="images/favicon3.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Inter:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <header id="header">
         <div class="container">
             <a href="index.html">
-                <img src="images/Logo.png" alt="Flourish & Free Logo" class="logo">
+                <img src="images/Logo.png" alt="Flourish & Free - Home" class="logo">
             </a>
-            <nav>
+            <nav aria-label="Main navigation">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="browseallrecipes.html" class="active">Recipes</a></li>
+                    <li><a href="browseallrecipes.html" class="active" aria-current="page">Recipes</a></li>
                     <li><a href="Hacks.html">Tips/Hacks</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
                 </ul>
@@ -25,7 +28,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <!-- Modern Breadcrumb Navigation -->
         <nav class="breadcrumbs" aria-label="Breadcrumb navigation">
             <ol id="breadcrumb-list">
@@ -61,41 +64,41 @@
             </script>
         </nav>
 
-        <section class="hero">
-            <h1>BROWSE ALL RECIPES</h1>
+        <section class="hero" aria-labelledby="hero-heading">
+            <h1 id="hero-heading">BROWSE ALL RECIPES</h1>
             <p>Not sure what to make? Discover a variety of delicious gluten-free and dairy-free recipes for every craving.</p>
         </section>
 
-        <section class="recipe-grid">
+        <section class="recipe-grid" aria-label="Recipe collection">
             <!-- Recipe Card 1 -->
-            <div class="recipe-card">
+            <article class="recipe-card">
                 <div class="image-container">
-                    <img src="images/joyful-G4zLsxLIpAA-unsplash.jpg" alt="Coconut Oil Chocolate Cookies">
+                    <img src="images/joyful-G4zLsxLIpAA-unsplash.jpg" alt="Freshly baked coconut oil chocolate chip cookies on a cooling rack">
                 </div>
                 <h3>Coconut Oil Chocolate Cookies</h3>
                 <p>One bowl simple chocolate chip cookie recipe made from standard ingredients we all usually have in our pantries.</p>
                 <a href="chocolatechipcookies.html" class="button">View Recipe</a>
-            </div>
+            </article>
 
             <!-- Recipe Card 2 -->
-            <div class="recipe-card">
+            <article class="recipe-card">
                 <div class="image-container">
-                    <img src="images/priscilla-du-preez-8vKxl0uxyYc-unsplash (1).jpg" alt="Peanut Butter Bread">
+                    <img src="images/priscilla-du-preez-8vKxl0uxyYc-unsplash (1).jpg" alt="Sliced peanut butter bread with chocolate chips on a wooden cutting board">
                 </div>
                 <h3>Peanut Butter Bread</h3>
                 <p>Deliciously moist peanut butter banana bread made with gluten-free and dairy-free ingredients, perfect for a wholesome treat.</p>
                 <a href="peanutbutterbread.html" class="button">View Recipe</a>
-            </div>
+            </article>
 
             <!-- Recipe Card 3 -->
-            <div class="recipe-card">
+            <article class="recipe-card">
                 <div class="image-container">
-                    <img src="images/ludovic-avice-2cIbN8dqlwI-unsplash.jpg" alt="Bakery Style Chocolate Chip Muffins">
+                    <img src="images/ludovic-avice-2cIbN8dqlwI-unsplash.jpg" alt="Freshly baked chocolate chip muffins with golden tops">
                 </div>
                 <h3>Bakery Style Chocolate Chip Muffins</h3>
                 <p>Fluffy bakery-style muffins created from some basic ingredients, ideal for a delightful morning snack.</p>
                 <a href="muffins.html" class="button">View Recipe</a>
-            </div>
+            </article>
         </section>
     </main>
 </body>

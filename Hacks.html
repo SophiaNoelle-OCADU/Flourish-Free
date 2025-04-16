@@ -3,28 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flourish & Free - Baking Tips/Hacks</title>
+    <title>Baking Tips & Hacks - Flourish & Free - Gluten-Free & Dairy-Free Baking</title>
+    <meta name="description" content="Essential gluten-free and dairy-free baking tips, flour guides, and ingredient substitutions">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
     <link rel="icon" href="images/favicon3.png" type="image/png">
     <link rel="stylesheet" href="hacksstyle.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header id="header">
         <div class="container">
-            <a href="index.html"><img src="images/Logo.png" alt="Flourish & Free Logo" class="logo"></a>
-            <nav>
+            <a href="index.html"><img src="images/Logo.png" alt="Flourish & Free - Home" class="logo"></a>
+            <nav aria-label="Main navigation">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="browseallrecipes.html">Recipes</a></li>
-                    <li><a href="Hacks.html" class="active">Tips/Hacks</a></li>
+                    <li><a href="Hacks.html" class="active" aria-current="page">Tips/Hacks</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <!-- Clean Breadcrumb Navigation -->
         <nav class="breadcrumbs" aria-label="Breadcrumb navigation">
             <ol id="breadcrumb-list">
@@ -79,9 +81,9 @@
         </nav>
 
         <div class="main-container">
-            <h1 class="section-header">Gluten-Free Flour Guide</h1>
-            <div class="grid">
-                <section class="modular-section">
+            <h1 class="section-header" id="flour-guide">Gluten-Free Flour Guide</h1>
+            <div class="grid" role="list" aria-labelledby="flour-guide">
+                <section class="modular-section" role="listitem">
                     <h2>Best Flours for Cookies</h2>
                     <ul>
                         <li>Rice flour blend for crispy edges</li>
@@ -89,7 +91,7 @@
                         <li>Oat flour for soft-batch style</li>
                     </ul>
                 </section>
-                <section class="modular-section">
+                <section class="modular-section" role="listitem">
                     <h2>Best Flours for Muffins</h2>
                     <ul>
                         <li>Sorghum flour for texture</li>
@@ -97,7 +99,7 @@
                         <li>Oat flour for softness</li>
                     </ul>
                 </section>
-                <section class="modular-section">
+                <section class="modular-section" role="listitem">
                     <h2>Avoid</h2>
                     <ul>
                         <li>Rice flour for bread</li>
@@ -105,7 +107,7 @@
                         <li>Buckwheat flour as it has a strong earthy flavor and grittiness</li>
                     </ul>
                 </section>
-                <section class="modular-section tall">
+                <section class="modular-section tall" role="listitem">
                     <h2>Blends</h2>
                     <ul>
                         <li>Ideal flour mix for cookies: Rice flour blend</li>
@@ -115,9 +117,9 @@
                 </section>
             </div>
 
-            <h1 class="section-header">Egg Tips & Substitutes</h1>
-            <div class="grid">
-                <section class="modular-section tall">
+            <h1 class="section-header" id="egg-tips">Egg Tips & Substitutes</h1>
+            <div class="grid" role="list" aria-labelledby="egg-tips">
+                <section class="modular-section tall" role="listitem">
                     <h2>Temperature Tips</h2>
                     <ul>
                         <li>Room temperature eggs for better binding</li>
@@ -125,7 +127,7 @@
                         <li>Never use cold eggs in muffin batters</li>
                     </ul>
                 </section>
-                <section class="modular-section">
+                <section class="modular-section" role="listitem">
                     <h2>Substitutes</h2>
                     <ul>
                         <li>Flaxseed meal: 1 tbsp + 3 tbsp water = 1 egg</li>
@@ -135,9 +137,9 @@
                 </section>
             </div>
 
-            <h1 class="section-header">Dairy-Free Milk Alternatives</h1>
-            <div class="grid">
-                <section class="modular-section">
+            <h1 class="section-header" id="milk-alternatives">Dairy-Free Milk Alternatives</h1>
+            <div class="grid" role="list" aria-labelledby="milk-alternatives">
+                <section class="modular-section" role="listitem">
                     <h2>Almond Milk</h2>
                     <ul>
                         <li>Nutty taste</li>
@@ -145,7 +147,7 @@
                         <li>Avoid sweetened or flavored versions</li>
                     </ul>
                 </section>
-                <section class="modular-section">
+                <section class="modular-section" role="listitem">
                     <h2>Oat Milk</h2>
                     <ul>
                         <li>Generally tasteless in baked goods</li>
@@ -153,7 +155,7 @@
                         <li>Natural sweetness</li>
                     </ul>
                 </section>
-                <section class="modular-section">
+                <section class="modular-section" role="listitem">
                     <h2>Coconut Milk</h2>
                     <ul>
                         <li>Rich and creamy</li>
@@ -161,7 +163,7 @@
                         <li>Adds moisture</li>
                     </ul>
                 </section>
-                <section class="modular-section">
+                <section class="modular-section" role="listitem">
                     <h2>Buttermilk Substitutions</h2>
                     <ul>
                         <li>1 cup milk + 1 tbsp vinegar or lemon juice</li>
@@ -171,6 +173,5 @@
             </div>
         </div>
     </main>
-
 </body>
 </html>
