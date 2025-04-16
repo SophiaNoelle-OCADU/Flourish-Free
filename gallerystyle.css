@@ -192,3 +192,8 @@ main {
         margin-bottom: 20px;
     }
 }
+
+/* Custom Cursor */
+* {
+    cursor: url(https://cur.cursors-4u.net/food/foo-5/foo518.cur), auto !important;
+}
