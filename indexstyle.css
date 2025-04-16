@@ -17,7 +17,7 @@ body {
 .container {
     width: 90%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 20 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -132,7 +132,7 @@ nav ul li a:hover {
     background-color: white;
     opacity: 0.8;
     z-index: -1;
-    border-radius: 15px; /* Rounded edges */
+    border-radius: 21px; /* Rounded edges */
 }
 
 /* About Section */
