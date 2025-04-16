@@ -1,4 +1,4 @@
-/* Global Styles */
+/* ===== GLOBAL STYLES ===== */
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +12,7 @@ body {
     line-height: 1.6;
 }
 
-/* ===== NAVIGATION BAR (MATCHING STYLE) ===== */
+/* ===== STANDARDIZED NAVIGATION BAR ===== */
 #header {
     background: white;
     padding: 15px 0;
@@ -24,7 +24,7 @@ body {
     transition: opacity 0.5s ease-in-out;
 }
 
-.container {
+.header-container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
@@ -57,7 +57,6 @@ nav ul li a {
     font-weight: 600;
 }
 
-/* Active link underline */
 nav ul li a.active::after {
     content: "";
     position: absolute;
@@ -69,30 +68,34 @@ nav ul li a.active::after {
     border-radius: 3px;
 }
 
-/* Hover state */
 nav ul li a:hover {
     color: #FFB6C1;
 }
 
-/* ===== RECIPE CONTENT ===== */
+/* ===== ORIGINAL RECIPE PAGE STYLES (UNCHANGED) ===== */
+.container {
+    width: 80%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
 main {
-    margin-top: 80px;
-    padding: 20px;
+    padding-top: 100px;
 }
 
 .recipe h1 {
     font-family: 'Inter', sans-serif;
-    font-size: 2rem;
+    font-size: 32px;
     font-weight: 600;
 }
 
 .recipe .description {
-    font-size: 1rem;
+    font-size: 16px;
     line-height: 1.6;
 }
 
 .recipe .meta {
-    font-size: 0.875rem;
+    font-size: 14px;
     font-weight: 600;
     color: #666;
 }
@@ -101,16 +104,15 @@ main {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
-    gap: 30px;
 }
 
 .ingredients, .instructions {
-    flex: 1;
+    width: 52%;
 }
 
 .ingredients h2, .instructions h2 {
     font-family: 'Inter', sans-serif;
-    font-size: 1.25rem;
+    font-size: 20px;
     font-weight: 600;
     border-bottom: 2px solid #FFB6C1;
     padding-bottom: 5px;
@@ -126,34 +128,39 @@ main {
     max-height: 500px;
     object-fit: cover;
     margin-top: 20px;
-    border-radius: 24px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-left: 10%;
+    display: block;
+    border-radius: 34px;
 }
 
-/* Fade Out Header */
 .hidden {
     opacity: 0;
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
+/* ===== RESPONSIVE STYLES (UNCHANGED) ===== */
 @media (max-width: 800px) {
-    .content {
-        flex-direction: column;
+    .ingredients, .instructions {
+        width: 100%;
     }
     
     .recipe-image {
         width: 100%;
         margin-left: 0;
-        order: -1;
     }
-    
-    #header {
-        padding: 10px 0;
+}
+
+@media (max-width: 600px) {
+    .header-container {
+        flex-direction: column;
     }
     
     nav ul {
+        margin-top: 15px;
         flex-wrap: wrap;
         justify-content: center;
-        margin-top: 15px;
+    }
+    
+    main {
+        padding-top: 130px;
     }
 }
