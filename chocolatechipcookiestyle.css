@@ -1,4 +1,18 @@
-/* ===== STANDARDIZED NAVIGATION ===== */
+/* ===== GLOBAL STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #F8F7F4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ===== NAVIGATION ===== */
 #header {
     background: white;
     padding: 15px 0;
@@ -38,7 +52,7 @@ nav ul li a {
     padding-bottom: 8px;
     transition: all 0.3s ease;
     display: inline-block;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-weight: 600;
 }
 
@@ -59,7 +73,7 @@ nav ul li a:hover {
 
 /* ===== MAIN CONTENT ===== */
 main {
-    margin-top: 80px; /* Matches header height */
+    margin-top: 80px;
 }
 
 .container {
@@ -75,28 +89,20 @@ main {
     flex: 1;
 }
 
-.recipe-image {
-    width: 45%;
-    max-height: 500px;
-    object-fit: cover;
-    border-radius: 34px;
-    align-self: flex-start;
-    position: sticky;
-    top: 100px;
-}
-
 /* ===== RECIPE CONTENT ===== */
 .recipe h1 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 1rem;
+    color: #333;
 }
 
 .recipe .description {
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
+    color: #333;
 }
 
 .recipe .meta {
@@ -116,23 +122,50 @@ main {
 }
 
 .ingredients h2, .instructions h2 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: 1.25rem;
     font-weight: 600;
     border-bottom: 2px solid #FFB6C1;
     padding-bottom: 5px;
     margin-bottom: 1rem;
+    color: #333;
 }
 
 .ingredients ul, .instructions ol {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
     padding-left: 20px;
+    color: #333;
 }
 
 .ingredients li, .instructions li {
     margin-bottom: 0.5rem;
 }
 
-/* ===== RESPONSIVE ADJUSTMENTS ===== */
+.recipe-image {
+    width: 45%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 34px;
+    align-self: flex-start;
+    position: sticky;
+    top: 100px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== LINKS ===== */
+a {
+    color: #FFB6C1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ff9aa8;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 900px) {
     .container {
         flex-direction: column;
@@ -164,5 +197,9 @@ main {
     
     main {
         margin-top: 120px;
+    }
+    
+    .recipe h1 {
+        font-size: 1.75rem;
     }
 }
