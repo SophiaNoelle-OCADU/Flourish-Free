@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakery Style Chocolate Chip Muffins | Flourish & Free</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon3.png" type="image/png">
+    <link rel="stylesheet" href="muffinsstyle.css">
+</head>
+<body>
+    <header id="header">
+        <div class="header-container">
+            <a href="index.html"><img src="images/Logo.png" alt="Flourish & Free Logo" class="logo"></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="browseallrecipes.html">Recipes</a></li>
+                    <li><a href="Hacks.html">Tips/Hacks</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb navigation">
+            <ol id="breadcrumb-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browseallrecipes.html">All Recipes</a></li>
+                <li aria-current="page">Chocolate Chip Muffins</li>
+            </ol>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const container = document.getElementById('breadcrumb-list');
+                    const path = window.location.pathname;
+                    
+                    const pageNames = {
+                        'index.html': 'Home',
+                        'browseallrecipes.html': 'All Recipes',
+                        'muffins.html': 'Chocolate Chip Muffins'
+                    };
+                    
+                    let html = '<li><a href="index.html">Home</a></li>';
+                    html += '<li><a href="browseallrecipes.html">All Recipes</a></li>';
+                    html += '<li aria-current="page">Chocolate Chip Muffins</li>';
+                    
+                    container.innerHTML = html;
+                });
+            </script>
+        </nav>
+
+        <div class="container">
+            <div class="content-box">
+                <article class="recipe">
+                    <h1>Bakery Style Chocolate Chip Muffins</h1>
+                    <p class="description">
+                        Adapted from <a href="https://www.shelovesbiscotti.com/best-ever-chocolate-chip-muffins/#recipe" target="_blank">She Loves Biscotti</a>, these gluten-free, dairy-free muffins have a perfect bakery-style dome and tender crumb. 
+                        The cinnamon sugar topping adds a delightful crunch!
+                    </p>
+
+                    <p class="meta"><strong>Prep time:</strong> 15m <strong>Cook time:</strong> 20m <strong>Total time:</strong> 35m</p>
+
+                    <div class="ingredients-instructions">
+                        <div class="ingredients">
+                            <h2>Ingredients</h2>
+                            <h3>Dry Ingredients:</h3>
+                            <ul>
+                                <li>2 cups gluten-free flour blend</li>
+                                <li>½ cup brown sugar</li>
+                                <li>1½ teaspoons baking powder</li>
+                                <li>½ teaspoon baking soda</li>
+                                <li>Dash of salt</li>
+                                <li>½ cup dairy-free chocolate chips</li>
+                            </ul>
+                            
+                            <h3>Liquid Ingredients:</h3>
+                            <ul>
+                                <li>2 eggs (room temperature)</li>
+                                <li>¼ cup canola oil</li>
+                                <li>1 cup plant milk + 1 tbsp lemon juice (buttermilk substitute)</li>
+                                <li>1 teaspoon real vanilla extract</li>
+                            </ul>
+                            
+                            <h3>Optional Topping:</h3>
+                            <ul>
+                                <li>1 tablespoon granulated sugar</li>
+                                <li>½ teaspoon cinnamon</li>
+                            </ul>
+                        </div>
+
+                        <div class="instructions">
+                            <h2>Instructions</h2>
+                            <ol>
+                                <li>Preheat oven to 400°F (200°C).</li>
+                                <li>In a medium bowl, whisk together all dry ingredients including chocolate chips.</li>
+                                <li>If making the topping, mix sugar and cinnamon in a small bowl and set aside.</li>
+                                <li>In a large bowl, whisk together eggs, oil, plant milk mixture, and vanilla.</li>
+                                <li>Add dry ingredients to wet ingredients and mix until just combined (don't overmix).</li>
+                                <li>Line a muffin pan with liners or parchment squares. Divide batter evenly among cups.</li>
+                                <li>Sprinkle with cinnamon sugar topping if using.</li>
+                                <li>Bake for 18-20 minutes until golden and a toothpick comes out clean.</li>
+                                <li>Cool in pan for 5 minutes, then transfer to a wire rack.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <img src="images/ludovic-avice-2cIbN8dqlwI-unsplash.jpg" alt="Bakery Style Chocolate Chip Muffins" class="recipe-image">
+        </div>
+    </main>
+</body>
+</html>
