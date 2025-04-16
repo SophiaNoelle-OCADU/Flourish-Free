@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flourish & Free - Coconut Oil Chocolate Chip Cookies</title>
+    <title>Coconut Oil Chocolate Chip Cookies - Flourish & Free - Gluten-Free & Dairy-Free Recipe</title>
+    <meta name="description" content="Easy gluten-free and dairy-free chocolate chip cookies recipe using coconut oil">
     <!-- Font Preload -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,10 +14,12 @@
     <script defer src="script.js"></script>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <header id="header">
         <div class="header-container">
-            <a href="index.html"><img src="images/Logo.png" alt="Flourish & Free Logo" class="logo"></a>
-            <nav>
+            <a href="index.html"><img src="images/Logo.png" alt="Flourish & Free - Home" class="logo"></a>
+            <nav aria-label="Main navigation">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="browseallrecipes.html">Recipes</a></li>
@@ -27,7 +30,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <!-- Modern Breadcrumb Navigation -->
         <nav class="breadcrumbs" aria-label="Breadcrumb navigation">
             <ol id="breadcrumb-list">
@@ -65,20 +68,24 @@
 
         <div class="container">
             <div class="content-box">
-                <article class="recipe">
-                    <h1>Coconut Oil Chocolate Chip Cookies</h1>
-                    <p class="description">
-                        Adapted from the original recipe by <a href="https://www.lifeasastrawberry.com/butterless-chocolate-chip-cookies/#tasty-recipes-9730-jump-target" target="_blank">Life As A Strawberry</a>, this version reflects the way I usually bake them. 
+                <article class="recipe" itemscope itemtype="https://schema.org/Recipe">
+                    <h1 itemprop="name">Coconut Oil Chocolate Chip Cookies</h1>
+                    <p class="description" itemprop="description">
+                        Adapted from the original recipe by <a href="https://www.lifeasastrawberry.com/butterless-chocolate-chip-cookies/#tasty-recipes-9730-jump-target" target="_blank" rel="noopener noreferrer">Life As A Strawberry</a>, this version reflects the way I usually bake them. 
                         They're an easy, one-bowl recipe that comes together quickly and uses ingredients we all usually have in our pantries, 
                         making them a go-to for a GF/DF treat!
                     </p>
 
-                    <p class="meta"><strong>Preptime:</strong> 15m <strong>Cook time:</strong> 25m <strong>Total time:</strong> 40m est</p>
+                    <div class="meta">
+                        <span itemprop="prepTime" content="PT15M"><strong>Prep time:</strong> 15m</span> 
+                        <span itemprop="cookTime" content="PT25M"><strong>Cook time:</strong> 25m</span> 
+                        <span itemprop="totalTime" content="PT40M"><strong>Total time:</strong> 40m est</span>
+                    </div>
 
                     <div class="ingredients-instructions">
-                        <div class="ingredients">
-                            <h2>Ingredients</h2>
-                            <ul>
+                        <section class="ingredients" aria-labelledby="ingredients-heading">
+                            <h2 id="ingredients-heading">Ingredients</h2>
+                            <ul itemprop="recipeIngredient">
                                 <li>¼ cup Melted Coconut Oil</li>
                                 <li>2 tsp Real Vanilla Extract</li>
                                 <li>2 Eggs</li>
@@ -89,24 +96,24 @@
                                 <li>1 tsp Baking Soda</li>
                                 <li>A handful of Dairy Free Chocolate Chips</li>
                             </ul>
-                        </div>
+                        </section>
 
-                        <div class="instructions">
-                            <h2>Instructions</h2>
-                            <ol>
-                                <li>Preheat oven to 375.</li>
+                        <section class="instructions" aria-labelledby="instructions-heading">
+                            <h2 id="instructions-heading">Instructions</h2>
+                            <ol itemprop="recipeInstructions">
+                                <li>Preheat oven to 375°F (190°C).</li>
                                 <li>In a large bowl whisk together melted coconut oil, vanilla, eggs, and both sugars.</li>
                                 <li>After contents are combined, add in flour, salt, and baking soda until smooth.</li>
                                 <li>Fold in chocolate chips.</li>
                                 <li>Scoop dough with a small cookie scoop onto your stone or baking sheet. They shouldn't spread much.</li>
                                 <li>Bake for 8-10 minutes or until they're browning.</li>
                             </ol>
-                        </div>
+                        </section>
                     </div>
                 </article>
             </div>
 
-            <img src="images/joyful-G4zLsxLIpAA-unsplash.jpg" alt="Chocolate Chip Cookies" class="recipe-image">
+            <img src="images/joyful-G4zLsxLIpAA-unsplash.jpg" alt="Freshly baked chocolate chip cookies on a cooling rack" class="recipe-image" itemprop="image">
         </div>
     </main>
 </body>
