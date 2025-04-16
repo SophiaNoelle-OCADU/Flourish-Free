@@ -82,6 +82,7 @@ nav ul li a:hover {
     left: 0;
     top: 0;
     border-radius: 15px; /* Rounded edges */
+    z-index: 1; /* Ensure image is behind content */
 }
 
 .header-content {
@@ -92,6 +93,9 @@ nav ul li a:hover {
     z-index: 2;
     animation: fadeIn 1s ease-out; /* Updated animation */
     padding: 20px; /* Added padding */
+    background-color: white; /* Ensure background is white */
+    border-radius: 15px; /* Rounded edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
 }
 
 .header-content h1 {
@@ -120,20 +124,6 @@ nav ul li a:hover {
 
 .btn:hover {
     background-color: #ff9aa8; /* Hover state */
-}
-
-/* White block under text and button */
-.header-container::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    opacity: 0.8;
-    z-index: -1;
-    border-radius: 15px; /* Rounded edges */
 }
 
 /* About Section */
@@ -220,4 +210,3 @@ nav ul li a:hover {
         opacity: 1;
     }
 }
-
