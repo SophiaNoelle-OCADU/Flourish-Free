@@ -11,7 +11,7 @@
 <body>
     <header id="header">
         <div class="container">
-            <a href="starting.html">
+            <a href="index.html">
                 <img src="images/Logo.png" alt="Flourish & Free Logo" class="logo">
             </a>
             <nav>
@@ -26,6 +26,41 @@
     </header>
 
     <main>
+        <!-- Modern Breadcrumb Navigation -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb navigation">
+            <ol id="breadcrumb-list">
+                <li><a href="index.html">Home</a></li>
+                <li aria-current="page">All Recipes</li>
+            </ol>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const container = document.getElementById('breadcrumb-list');
+                    const path = window.location.pathname;
+                    const currentPage = path.split('/').pop() || 'index.html';
+                    
+                    // Map all pages to their display names
+                    const pageNames = {
+                        'index.html': 'Home',
+                        'browseallrecipes.html': 'All Recipes',
+                        'Hacks.html': 'Tips & Hacks',
+                        'gallery.html': 'Gallery',
+                        'chocolatechipcookies.html': 'Chocolate Chip Cookies',
+                        'peanutbutterbread.html': 'Peanut Butter Bread',
+                        'recipe-muffins.html': 'Bakery Muffins'
+                    };
+                    
+                    // Start with Home link
+                    let html = '<li><a href="index.html">Home</a></li>';
+                    
+                    if (pageNames[currentPage] && currentPage !== 'index.html') {
+                        html += `<li aria-current="page">${pageNames[currentPage]}</li>`;
+                    }
+                    
+                    container.innerHTML = html;
+                });
+            </script>
+        </nav>
+
         <section class="hero">
             <h1>BROWSE ALL RECIPES</h1>
             <p>Not sure what to make? Discover a variety of delicious gluten-free and dairy-free recipes for every craving.</p>
