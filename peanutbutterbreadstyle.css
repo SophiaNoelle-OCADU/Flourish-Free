@@ -73,6 +73,60 @@ nav ul li a:hover {
     color: #FFB6C1;
 }
 
+/* ===== MODERN BREADCRUMBS ===== */
+.breadcrumbs {
+    width: 90%;
+    max-width: 1100px;
+    margin: 1rem auto 0;
+    padding: 0.5rem 0;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumbs li {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #888;
+    transition: all 0.2s ease;
+}
+
+.breadcrumbs li:not(:last-child)::after {
+    content: '›';
+    margin: 0 0.5rem;
+    color: #ccc;
+    font-size: 1.1rem;
+}
+
+.breadcrumbs a {
+    color: #FFB6C1;
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.breadcrumbs a:hover {
+    color: #ff9aa8;
+    background: rgba(255, 182, 193, 0.1);
+}
+
+.breadcrumbs [aria-current="page"] {
+    color: #666;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+}
+
 /* ===== MAIN CONTENT ===== */
 main {
     margin-top: 80px;
@@ -188,6 +242,19 @@ a:hover {
     .ingredients-instructions {
         flex-direction: column;
         gap: 20px;
+    }
+
+    /* Mobile breadcrumbs */
+    .breadcrumbs {
+        padding: 0.5rem;
+    }
+    
+    .breadcrumbs li {
+        font-size: 0.8rem;
+    }
+    
+    .breadcrumbs li::after {
+        margin: 0 0.35rem;
     }
 }
 
