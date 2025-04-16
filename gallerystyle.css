@@ -12,7 +12,7 @@ body {
     line-height: 1.6;
 }
 
-/* ===== NAVIGATION BAR (MATCHING STYLE) ===== */
+/* ===== NAVIGATION BAR ===== */
 #header {
     background: white;
     padding: 15px 0;
@@ -79,7 +79,7 @@ main {
 
 .gallery-container {
     width: 90%;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px 0;
 }
@@ -89,40 +89,45 @@ main {
     font-size: 2rem;
     font-weight: 600;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     border-bottom: 2px solid #FFB6C1;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
 }
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 0 10px;
 }
 
 .gallery-grid a {
     position: relative;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    aspect-ratio: 1/1;
+    background: #f0f0f0;
 }
 
 .gallery-grid img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     display: block;
     transition: transform 0.3s ease;
 }
 
 .gallery-grid a:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .gallery-grid a:hover img {
     transform: scale(1.05);
 }
 
+/* Image overlay effect */
 .gallery-grid a::after {
     content: "";
     position: absolute;
@@ -130,13 +135,35 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 182, 193, 0.5);
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%);
     opacity: 0;
     transition: opacity 0.3s ease;
+    z-index: 1;
 }
 
 .gallery-grid a:hover::after {
     opacity: 1;
+}
+
+/* Image caption */
+.gallery-grid a::before {
+    content: attr(aria-label);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    padding: 15px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    z-index: 2;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.gallery-grid a:hover::before {
+    transform: translateY(0);
 }
 
 /* Mobile Responsiveness */
@@ -156,6 +183,12 @@ main {
     }
 
     .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    
+    .section-header {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
     }
 }
