@@ -17,7 +17,7 @@ body {
 .container {
     width: 90%;
     max-width: 1200px;
-    margin: 20 auto;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -91,6 +91,7 @@ nav ul li a:hover {
     max-width: 500px;
     z-index: 2;
     animation: fadeIn 1s ease-out; /* Updated animation */
+    padding: 20px; /* Added padding */
 }
 
 .header-content h1 {
@@ -132,7 +133,7 @@ nav ul li a:hover {
     background-color: white;
     opacity: 0.8;
     z-index: -1;
-    border-radius: 21px; /* Rounded edges */
+    border-radius: 15px; /* Rounded edges */
 }
 
 /* About Section */
