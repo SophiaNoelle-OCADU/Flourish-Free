@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
     <link rel="icon" href="images/favicon3.png" type="image/png">
     <link rel="stylesheet" href="gallerystyle.css">
-    <script defer src="script.js"></script>
 </head>
 <body>
 
@@ -26,6 +25,39 @@
     </header>
 
     <main>
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <script>
+                // Enhanced breadcrumb generator
+                const breadcrumbContainer = document.currentScript.parentElement;
+                const path = window.location.pathname;
+                const pathParts = path.split('/').filter(part => part !== '');
+                
+                // Special case for home page
+                if (pathParts.length === 0) {
+                    breadcrumbContainer.innerHTML = '<ol><li aria-current="page">Home</li></ol>';
+                } else {
+                    let breadcrumbHTML = '<ol><li><a href="/">Home</a></li>';
+                    let accumulatedPath = '';
+                    
+                    pathParts.forEach((part, i) => {
+                        accumulatedPath += '/' + part;
+                        const displayName = part.replace('.html', '').replace(/-/g, ' ');
+                        const prettyName = displayName.replace(/\b\w/g, l => l.toUpperCase());
+                        
+                        if (i === pathParts.length - 1) {
+                            breadcrumbHTML += `<li aria-current="page">${prettyName}</li>`;
+                        } else {
+                            breadcrumbHTML += `<li><a href="${accumulatedPath}">${prettyName}</a></li>`;
+                        }
+                    });
+                    
+                    breadcrumbHTML += '</ol>';
+                    breadcrumbContainer.innerHTML = breadcrumbHTML;
+                }
+            </script>
+        </nav>
+        
         <div class="gallery-container">
             <h1 class="section-header">GALLERY</h1>
             
@@ -41,24 +73,6 @@
                 </a>
                 <a href="recipe4.html" aria-label="Recipe 4">
                     <img src="images/placeholder1.jpg" alt="Coming Soon: New Recipe" width="400" height="400" loading="lazy">
-                </a>
-                <a href="recipe5.html" aria-label="Recipe 5">
-                    <img src="images/placeholder2.jpg" alt="Coming Soon: New Recipe" width="400" height="400" loading="lazy">
-                </a>
-                <a href="recipe6.html" aria-label="Recipe 6">
-                    <img src="images/placeholder3.jpg" alt="Coming Soon: New Recipe" width="400" height="400" loading="lazy">
-                </a>
-                <a href="recipe7.html" aria-label="Recipe 7">
-                    <img src="images/placeholder4.jpg" alt="Coming Soon: New Recipe" width="400" height="400" loading="lazy">
-                </a>
-                <a href="recipe8.html" aria-label="Recipe 8">
-                    <img src="images/placeholder5.jpg" alt="Coming Soon: New Recipe" width="400" height="400" loading="lazy">
-                </a>
-                <a href="recipe9.html" aria-label="Recipe 9">
-                    <img src="images/placeholder6.jpg" alt="Coming Soon: New Recipe" width="400" height="400" loading="lazy">
-                </a>
-                <a href="recipe10.html" aria-label="Recipe 10">
-                    <img src="images/placeholder7.jpg" alt="Coming Soon: New Recipe" width="400" height="400" loading="lazy">
                 </a>
             </div>
         </div>

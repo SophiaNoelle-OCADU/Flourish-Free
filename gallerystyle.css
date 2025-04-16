@@ -1,8 +1,9 @@
-/* Global Styles */
+/* ===== GLOBAL STYLES ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    cursor: url(https://cur.cursors-4u.net/food/foo-5/foo518.cur), auto !important;
 }
 
 body {
@@ -34,6 +35,7 @@ body {
 
 .logo {
     height: 50px;
+    width: auto;
 }
 
 nav ul {
@@ -69,6 +71,54 @@ nav ul li a.active::after {
 /* Hover state */
 nav ul li a:hover {
     color: #FFB6C1;
+}
+
+/* ===== BREADCRUMB STYLES ===== */
+.breadcrumb {
+    padding: 1rem 0;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1200px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.breadcrumb ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.breadcrumb li {
+    display: flex;
+    align-items: center;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: '/';
+    margin-left: 0.5rem;
+    color: #999;
+}
+
+.breadcrumb a {
+    color: #FFB6C1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: #ff9aa8;
+    text-decoration: underline;
+}
+
+.breadcrumb [aria-current="page"] {
+    color: #333;
+    font-weight: 600;
 }
 
 /* ===== GALLERY CONTENT ===== */
@@ -166,7 +216,7 @@ main {
     transform: translateY(0);
 }
 
-/* Mobile Responsiveness */
+/* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
     #header {
         padding: 10px 0;
@@ -191,9 +241,12 @@ main {
         font-size: 1.5rem;
         margin-bottom: 20px;
     }
-}
-
-/* Custom Cursor */
-* {
-    cursor: url(https://cur.cursors-4u.net/food/foo-5/foo518.cur), auto !important;
+    
+    .breadcrumb li {
+        font-size: 0.8rem;
+    }
+    
+    .breadcrumb {
+        padding: 0.5rem 0;
+    }
 }
