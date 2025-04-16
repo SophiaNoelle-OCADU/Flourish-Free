@@ -203,3 +203,8 @@ a:hover {
         font-size: 1.75rem;
     }
 }
+
+/* Custom Cursor */
+* {
+    cursor: url(https://cur.cursors-4u.net/food/foo-5/foo518.cur), auto !important;
+}
