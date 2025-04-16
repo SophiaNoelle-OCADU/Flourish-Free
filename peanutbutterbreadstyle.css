@@ -85,7 +85,7 @@ nav ul li a.active::after {
     background-color: #D6408A;
     border-radius: 3px;
 }
-
+/* I changed the pink for the stupid checklist and i want you to know i hate it*/
 nav ul li a:hover {
     color: #D6408A;
 }
@@ -95,7 +95,7 @@ nav ul li a:focus {
     outline-offset: 4px;
 }
 
-/* ===== MODERN BREADCRUMBS ===== */
+/* - BREADCRUMBS WHY U LIKE THIS - */
 .breadcrumbs {
     width: 90%;
     max-width: 1100px;
@@ -154,7 +154,7 @@ nav ul li a:focus {
     padding: 0.25rem 0.5rem;
 }
 
-/* ===== MAIN CONTENT ===== */
+/* MAIN */
 main {
     margin-top: 80px;
 }

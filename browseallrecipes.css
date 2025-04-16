@@ -30,7 +30,7 @@ body {
     color: white;
 }
 
-/* ===== NAVIGATION BAR ===== */
+/* ===== NAVIGATION ===== */
 #header {
     background: white;
     padding: 15px 0;
@@ -158,7 +158,7 @@ main {
     padding: 20px;
 }
 
-/* ===== HERO SECTION ===== */
+/* ===== HERO AHHH ===== */
 .hero {
     text-align: center;
     max-width: 800px;
@@ -251,7 +251,7 @@ main {
     outline-offset: 2px;
 }
 
-/* ===== MOBILE RESPONSIVENESS ===== */
+/* ----- MOBILE ------ */
 @media (max-width: 768px) {
     #header {
         padding: 10px 0;
@@ -279,7 +279,7 @@ main {
         height: auto;
     }
 
-    /* Mobile breadcrumbs */
+    /* Mobile breadcrumbs cuz chris loves breadcrumbs */
     .breadcrumbs {
         padding: 0.5rem;
         margin: 0.5rem auto;

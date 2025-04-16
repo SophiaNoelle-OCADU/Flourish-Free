@@ -129,7 +129,7 @@ nav ul li a:focus {
     color: #ccc;
     font-size: 1.1rem;
 }
-
+/* I changed the pink for the stupid checklist and i want you to know i hate it*/
 .breadcrumbs a {
     color: #D6408A;
     text-decoration: none;
@@ -154,7 +154,7 @@ nav ul li a:focus {
     padding: 0.25rem 0.5rem;
 }
 
-/* ===== MAIN CONTENT ===== */
+/* ===== MAIN ===== */
 main {
     margin-top: 80px;
 }
@@ -172,7 +172,7 @@ main {
     flex: 1;
 }
 
-/* ===== RECIPE CONTENT ===== */
+/* RECIPE CONTENT FIXED */
 .recipe h1 {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: 2rem;
@@ -291,7 +291,7 @@ a:focus {
         font-size: 1.75rem;
     }
 
-    /* Mobile breadcrumbs */
+    /* Mobile breadcrumbs copy this one */
     .breadcrumbs {
         padding: 0.5rem;
     }
