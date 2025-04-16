@@ -65,7 +65,7 @@ nav ul li a:hover {
 .header-container {
     position: relative;
     width: 100%;
-    height: 782px;
+    height: 600px; /* Shorter height */
     margin: 18px auto 0;
     overflow: hidden;
 }
@@ -74,7 +74,6 @@ nav ul li a:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.35;
     position: absolute;
     left: 0;
     top: 0;
@@ -86,6 +85,7 @@ nav ul li a:hover {
     left: 104px;
     max-width: 500px;
     z-index: 2;
+    animation: slideUpFade 1s ease-out; /* Added animation */
 }
 
 .header-content h1 {
@@ -114,6 +114,19 @@ nav ul li a:hover {
 
 .btn:hover {
     background-color: #ff9aa8; /* Hover state */
+}
+
+/* White block under text and button */
+.header-content::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0.8;
+    z-index: -1;
 }
 
 /* About Section */
@@ -150,6 +163,7 @@ nav ul li a:hover {
     font-size: 2em;
     color: #FFB6C1;
     font-weight: 400;
+    text-align: center;
     margin-bottom: 20px;
 }
 
@@ -189,3 +203,16 @@ nav ul li a:hover {
     font-weight: 400;
     line-height: 1.6;
 }
+
+/* Slide up fade animation */
+@keyframes slideUpFade {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
